@@ -1,0 +1,20 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Account">
+
+        <EditTextPreference
+            android:key="username"
+            android:title="Username"/>
+
+        <EditTextPreference
+            android:key="email"
+            android:title="Email"/>
+
+        <Preference
+            android:key="clear_schedule"
+            android:title="Clear Schedule"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

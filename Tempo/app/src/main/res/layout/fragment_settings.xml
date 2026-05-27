@@ -1,0 +1,84 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp">
+
+    <!-- Example input fields (visual only) -->
+    <TextView
+        android:id="@+id/tvSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Settings"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <EditText
+        android:id="@+id/etChangeUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Change Username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSettingsTitle"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <EditText
+        android:id="@+id/etChangeEmail"
+        android:layout_width="364dp"
+        android:layout_height="39dp"
+        android:hint="Change Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etChangeUsername"
+        app:layout_constraintVertical_bias="0.154" />
+
+    <!-- Buttons for navigation -->
+    <EditText
+        android:id="@+id/etChangePassword"
+        android:layout_width="364dp"
+        android:layout_height="38dp"
+        android:hint="Change Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etChangeEmail"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <Button
+        android:id="@+id/btnSaveSettings"
+        android:layout_width="214dp"
+        android:layout_height="46dp"
+        android:text="Save Settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etChangePassword"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="213dp"
+        android:layout_height="43dp"
+        android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveSettings"
+        app:layout_constraintVertical_bias="0.256" />
+</androidx.constraintlayout.widget.ConstraintLayout>

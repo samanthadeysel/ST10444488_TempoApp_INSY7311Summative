@@ -1,0 +1,83 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp">
+
+    <!-- Hard-coded blocks -->
+
+    <TextView
+        android:id="@+id/tvScheduleTitle"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:text="Your Schedule for Today"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <TextView
+        android:id="@+id/tvBlock1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="09:00 - Hon. Group Study"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScheduleTitle"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/tvBlock2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="10:00 - English Lit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBlock1"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/tvBlock3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="11:00 - Coffee with Friends"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBlock2"
+        app:layout_constraintVertical_bias="0.193" />
+
+    <Button
+        android:id="@+id/btnAddBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Block"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBlock3"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <Button
+        android:id="@+id/btnStudyBlock"
+        android:layout_width="286dp"
+        android:layout_height="50dp"
+        android:text="Study Block"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddBlock"
+        app:layout_constraintVertical_bias="0.347" />
+</androidx.constraintlayout.widget.ConstraintLayout>

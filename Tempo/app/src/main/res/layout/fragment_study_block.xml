@@ -1,0 +1,55 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvStudyTitle"
+        android:text="Study Block Details"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <!-- Hard-coded block info -->
+    <TextView
+        android:id="@+id/tvStudySubject"
+        android:text="Subject: English Literature"
+        app:layout_constraintTop_toBottomOf="@id/tvStudyTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/tvStudyTime"
+        android:text="Time: 10:00 - 11:00"
+        app:layout_constraintTop_toBottomOf="@id/tvStudySubject"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:id="@+id/etNotes"
+        android:layout_width="203dp"
+        android:layout_height="126dp"
+        android:hint="Add notes here..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStudyTime" />
+
+    <Button
+        android:id="@+id/btnBackToSchedule"
+        android:text="Back to Schedule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
