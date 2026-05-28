@@ -22,17 +22,18 @@
 
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_width="345dp"
+        android:layout_height="147dp"
         android:text="Hi! \nWelcome"
-        android:textColor="@color/gray_text"
-        android:textSize="50sp"
+        android:textSize="60sp"
         android:textStyle="bold"
+        android:textColor="@color/gray_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -40,6 +41,7 @@
         android:layout_height="30dp"
         android:text="Let's create an account."
         android:textColor="@color/gray_text"
+        android:textStyle="bold"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

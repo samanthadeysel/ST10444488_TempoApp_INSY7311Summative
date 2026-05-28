@@ -3,69 +3,105 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_background"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/add_title"
-        android:layout_width="372dp"
-        android:layout_height="26dp"
-        android:text="Create New Block"
-        android:textSize="20sp"
+        android:id="@+id/tvHeader"
+        android:layout_width="235dp"
+        android:layout_height="47dp"
+        android:text="Create New"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubHeader"
+        android:layout_width="58dp"
+        android:layout_height="21dp"
+        android:text="Block"
+        android:textColor="@color/gray_text"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        app:layout_constraintVertical_bias="0.034" />
 
-    <EditText android:id="@+id/input_title" android:hint="Title"
-        app:layout_constraintTop_toBottomOf="@id/add_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp" android:layout_height="wrap_content"/>
-
-    <EditText android:id="@+id/input_time" android:hint="Time Allocation"
-        app:layout_constraintTop_toBottomOf="@id/input_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp" android:layout_height="wrap_content"/>
-
-    <EditText android:id="@+id/input_date" android:hint="Date"
-        app:layout_constraintTop_toBottomOf="@id/input_time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp" android:layout_height="wrap_content"/>
-
-    <EditText android:id="@+id/input_start" android:hint="Start Time"
-        app:layout_constraintTop_toBottomOf="@id/input_date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp" android:layout_height="wrap_content"/>
-
-    <EditText android:id="@+id/input_category" android:hint="Category"
-        app:layout_constraintTop_toBottomOf="@id/input_start"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp" android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/input_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Details"
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="318dp"
+        android:layout_height="521dp"
+        android:background="@color/beige_bg"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_category" />
+        app:layout_constraintTop_toBottomOf="@id/tvSubHeader"
+        app:layout_constraintVertical_bias="0.137">
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_details" />
+        <!-- Title -->
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title" />
+
+        <!-- Time Allocation -->
+
+        <!-- Date -->
+        <EditText
+            android:id="@+id/etTimeAllocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Time Allocation" />
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date" />
+
+        <!-- Start Time -->
+        <EditText
+            android:id="@+id/etStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Time" />
+
+        <!-- Category -->
+        <EditText
+            android:id="@+id/etCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category (auto-assign or override)" />
+
+        <!-- Details -->
+        <EditText
+            android:id="@+id/etDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Details"
+            android:minLines="3" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_blue"
+            android:text="Save"
+            android:textColor="@color/gray_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDetails"
+            app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
