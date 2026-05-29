@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //fragment hosting with navigation
     fun navigateTo(fragment: Fragment, showBottomNav: Boolean = true) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host_fragment, fragment)
