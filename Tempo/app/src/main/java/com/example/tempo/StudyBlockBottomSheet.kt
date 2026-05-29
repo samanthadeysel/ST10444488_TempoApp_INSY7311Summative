@@ -37,27 +37,24 @@ class StudyBlockBottomSheet : BottomSheetDialogFragment() {
         }
     }
 
-    private lateinit var tvTitle: TextView
-    private lateinit var tvType: TextView
-    private lateinit var tvStart: TextView
-    private lateinit var tvFinish: TextView
-    private lateinit var tvDetails: TextView
-    private lateinit var btnStart: Button
-    private lateinit var btnReschedule: Button
-    private lateinit var btnClose: ImageButton
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        // Inflate the bottom-sheet layout (ensure this file exists and IDs match)
+        return inflater.inflate(R.layout.fragment_study_block, container, false)
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_study_block, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val tvTitle = view.findViewById<TextView>(R.id.tvBlockTitle)
+        val tvType = view.findViewById<TextView>(R.id.tvBlockType)
+        val tvStart = view.findViewById<TextView>(R.id.tvStartTime)
+        val tvFinish = view.findViewById<TextView>(R.id.tvFinishTime)
+        val tvDetails = view.findViewById<TextView>(R.id.tvDetails)
+        val btnStart = view.findViewById<Button>(R.id.btnStartTimer)
+        val btnReschedule = view.findViewById<Button>(R.id.btnReschedule)
 
-        tvTitle = view.findViewById(R.id.tvBlockTitle)
-        tvType = view.findViewById(R.id.tvBlockType)
-        tvStart = view.findViewById(R.id.tvStartTime)
-        tvFinish = view.findViewById(R.id.tvFinishTime)
-        tvDetails = view.findViewById(R.id.tvDetails)
-        btnStart = view.findViewById(R.id.btnStartTimer)
-        btnReschedule = view.findViewById(R.id.btnReschedule)
+        if (tvTitle == null || btnStart == null || btnReschedule == null) {
+            dismiss()
+            return
+        }
 
         val title = arguments?.getString(ARG_TITLE) ?: "Study Block"
         val type = arguments?.getString(ARG_TYPE) ?: "Study"
@@ -67,13 +64,10 @@ class StudyBlockBottomSheet : BottomSheetDialogFragment() {
 
         tvTitle.text = title
         tvType.text = type
-        tvStart.text = if (start.isNotEmpty()) "Start: $start" else ""
-        tvFinish.text = if (finish.isNotEmpty()) "Finish: $finish" else ""
+        tvStart.text = if (start.isNotBlank()) "Start: $start" else ""
+        tvFinish.text = if (finish.isNotBlank()) "Finish: $finish" else ""
         tvDetails.text = details
 
-        btnClose.setOnClickListener { dismiss() }
-
-        //start
         btnStart.setOnClickListener {
             val timerFrag = StudyTimerFragment.newInstance(
                 title = title,
@@ -81,29 +75,21 @@ class StudyBlockBottomSheet : BottomSheetDialogFragment() {
                 finishTime = finish,
                 details = details
             )
-
-            // Use activity navigation helper to replace fragment and hide bottom nav
             (activity as? MainActivity)?.navigateTo(timerFrag, showBottomNav = false)
-
-            // dismiss bottom sheet
             dismiss()
         }
 
-        //reschedule
         btnReschedule.setOnClickListener {
             val addFrag = AddBlockFragment.newInstance(
                 title = title,
-                timeAllocation = finish, // or pass finish separately if you have a finish field
-                date = "",               // optional: pass date if available
+                timeAllocation = finish,
+                date = "",
                 startTime = start,
                 category = type,
                 details = details
             )
-
             (activity as? MainActivity)?.navigateTo(addFrag, showBottomNav = false)
             dismiss()
         }
-
-        return view
     }
 }

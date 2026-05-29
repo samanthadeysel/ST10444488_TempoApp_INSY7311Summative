@@ -42,7 +42,6 @@ class ScheduleAdapter(private val rows: List<ScheduleRow>) :
                 (holder as ItemViewHolder).bind(row)
                 holder.itemView.setOnClickListener {
                     val ctx = holder.itemView.context
-                    // Use the real item if available, otherwise fallback to a sample
                     val title = row.activity.ifEmpty { "Sample Study" }
                     val category = row.status.ifEmpty { "Study" }
                     val start = row.time.ifEmpty { "09:00" }
