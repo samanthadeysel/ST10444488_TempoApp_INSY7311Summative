@@ -15,11 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav = findViewById(R.id.bottom_nav)
 
-        // Start on LoginFragment with bottom nav hidden
+        //LoginFragment without bottom nav hidden
         if (savedInstanceState == null) {
             navigateTo(LoginFragment(), showBottomNav = false)
         }
 
+        //bottom nav backend
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
@@ -43,11 +44,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun navigateTo(fragment: Fragment, showBottomNav: Boolean = false) {
+    //fragment hosting with navigation
+    fun navigateTo(fragment: Fragment, showBottomNav: Boolean = true) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host_fragment, fragment)
+            .addToBackStack(null)
             .commit()
 
-        bottomNav.visibility = if (showBottomNav) View.VISIBLE else View.GONE
+        findViewById<BottomNavigationView?>(R.id.bottom_nav)?.visibility =
+            if (showBottomNav) View.VISIBLE else View.GONE
     }
 }

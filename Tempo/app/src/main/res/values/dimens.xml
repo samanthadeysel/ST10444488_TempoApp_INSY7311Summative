@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="container_padding">16dp</dimen>
+    <dimen name="standard_margin">12dp</dimen>
+    <dimen name="half_margin">6dp</dimen>
+
+    <dimen name="top_spacing">28dp</dimen>
+    <dimen name="recycler_bottom_padding">96dp</dimen>
+</resources>

@@ -1,55 +1,129 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="24dp">
+    android:layout_height="wrap_content"
+    android:background="@color/light_blue"
+    android:padding="@dimen/container_padding">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/half_margin">
+
+        <TextView
+            android:id="@+id/tvBlockTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hon. Group"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <!-- Subtitle -->
     <TextView
-        android:id="@+id/tvStudyTitle"
-        android:text="Study Block Details"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"/>
+        android:id="@+id/tvBlockType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Study Time"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/standard_margin"/>
 
-    <!-- Hard-coded block info -->
-    <TextView
-        android:id="@+id/tvStudySubject"
-        android:text="Subject: English Literature"
-        app:layout_constraintTop_toBottomOf="@id/tvStudyTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"/>
+    <!-- Info card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/beige_bg"
+        android:padding="@dimen/container_padding"
+        android:layout_marginBottom="@dimen/standard_margin">
 
-    <TextView
-        android:id="@+id/tvStudyTime"
-        android:text="Time: 10:00 - 11:00"
-        app:layout_constraintTop_toBottomOf="@id/tvStudySubject"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-    <EditText
-        android:id="@+id/etNotes"
-        android:layout_width="203dp"
-        android:layout_height="126dp"
-        android:hint="Add notes here..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvStudyTime" />
+            <TextView
+                android:id="@+id/tvStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start: 09:00"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvFinishTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finish: 10:00"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Details or notes about this study block go here."
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            android:layout_marginTop="@dimen/half_margin"/>
+    </LinearLayout>
+
+    <!-- Action row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="@dimen/standard_margin">
+
+        <Button
+            android:id="@+id/btnStartTimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start"
+            android:backgroundTint="@color/light_blue"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnEditBlock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:layout_marginStart="@dimen/half_margin"
+            android:layout_marginEnd="@dimen/half_margin"
+            android:backgroundTint="@color/dark_blue"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnDeleteBlock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:backgroundTint="@color/beige_bg"
+            android:textColor="@color/dark_blue"/>
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btnBackToSchedule"
-        android:text="Back to Schedule"
-        android:layout_width="0dp"
+        android:id="@+id/btnReschedule"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/etNotes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="RESCHEDULE"
+        android:backgroundTint="@color/beige_bg"
+        android:textColor="@color/dark_blue"
+        android:layout_marginTop="@dimen/half_margin"/>
+</LinearLayout>

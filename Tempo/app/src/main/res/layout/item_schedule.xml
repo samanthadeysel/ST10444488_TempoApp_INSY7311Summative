@@ -2,31 +2,54 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:background="@color/white_translucent"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
 
     <TextView
         android:id="@+id/tvTime"
-        android:layout_width="201dp"
+        android:layout_width="72dp"
         android:layout_height="wrap_content"
+        android:text="08:00"
         android:textColor="@color/dark_blue"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="16sp"/>
 
-    <TextView
-        android:id="@+id/tvActivity"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingStart="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/dark_blue"/>
+        android:paddingStart="12dp">
+
+        <TextView
+            android:id="@+id/tvActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Math Study"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/gray_text"
+            android:textSize="13sp"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textStyle="italic"/>
+        android:text="Free"
+        android:textColor="@color/light_blue"
+        android:textSize="13sp"
+        android:padding="6dp"
+        android:background="@drawable/status_chip"/>
 </LinearLayout>

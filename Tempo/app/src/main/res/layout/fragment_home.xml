@@ -7,17 +7,6 @@
     android:background="@color/light_blue">
 
 
-    <ImageView
-        android:id="@+id/bgClouds"
-        android:layout_width="533dp"
-        android:layout_height="904dp"
-        android:contentDescription="@string/todo1"
-        android:importantForAccessibility="no"
-        android:src="@drawable/clouds_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/bgSun"
@@ -117,6 +106,7 @@
         android:text="Hon. Group \nStudy"
         android:textSize="30sp"
         android:textStyle="italic"
+        android:textColor="@color/gray_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"

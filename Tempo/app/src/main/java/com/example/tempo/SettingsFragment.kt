@@ -18,10 +18,12 @@ class SettingsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
+        //type casting
         btnEditUser = view.findViewById(R.id.btnEditUser)
         btnChangePassword = view.findViewById(R.id.btnChangePassword)
         btnClearSchedule = view.findViewById(R.id.btnClearSchedule)
 
+        //on click listener
         btnEditUser.setOnClickListener {
             Toast.makeText(requireContext(), "Edit User Info clicked", Toast.LENGTH_SHORT).show()
         }
