@@ -11,9 +11,9 @@ class AddBlockFragment : Fragment(R.layout.fragment_add_block) {
         super.onViewCreated(view, savedInstanceState)
         val mainActivity = activity as MainActivity
 
-        view.findViewById<Button>(R.id.btn_save).setOnClickListener {
-            Toast.makeText(requireContext(), "Block Saved!", Toast.LENGTH_SHORT).show()
-            mainActivity.navigateTo(ScheduleFragment())
+        view.findViewById<Button>(R.id.btnSave).setOnClickListener {
+            Toast.makeText(requireContext(), "Block saved!", Toast.LENGTH_SHORT).show()
+            (activity as MainActivity).navigateTo(ScheduleFragment(), showBottomNav = true)
         }
     }
 }

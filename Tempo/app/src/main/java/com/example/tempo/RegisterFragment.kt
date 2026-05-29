@@ -1,25 +1,34 @@
 package com.example.tempo
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
-class RegisterFragment : Fragment(R.layout.fragment_register) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+class RegisterFragment : Fragment() {
 
-        val mainActivity = activity as MainActivity
+    private lateinit var btnSignup: Button
+    private lateinit var tvLoginLink: TextView
 
-        view.findViewById<Button>(R.id.btnSignup).setOnClickListener {
-            // After successful registration, go to Home and show bottom nav
-            mainActivity.navigateTo(HomeFragment(), showBottomNav = true)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
+
+        btnSignup = view.findViewById(R.id.btnSignup)
+        tvLoginLink = view.findViewById(R.id.tvLoginLink)
+
+        btnSignup.setOnClickListener {
+            (activity as MainActivity).navigateTo(HomeFragment(), showBottomNav = true)
         }
 
-        view.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener {
-            // Back to login, hide bottom nav
-            mainActivity.navigateTo(LoginFragment(), showBottomNav = false)
+        tvLoginLink.setOnClickListener {
+            (activity as MainActivity).navigateTo(LoginFragment(), showBottomNav = false)
         }
+
+        return view
     }
 }

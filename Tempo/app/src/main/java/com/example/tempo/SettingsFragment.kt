@@ -1,21 +1,38 @@
 package com.example.tempo
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 
-class SettingsFragment : Fragment(R.layout.fragment_settings) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val mainActivity = activity as MainActivity
+class SettingsFragment : Fragment() {
+    private lateinit var btnEditUser: Button
+    private lateinit var btnChangePassword: Button
+    private lateinit var btnClearSchedule: Button
 
-        view.findViewById<Button>(R.id.btnSaveSettings).setOnClickListener {
-            Toast.makeText(requireContext(), "Settings saved!", Toast.LENGTH_SHORT).show()
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+
+        btnEditUser = view.findViewById(R.id.btnEditUser)
+        btnChangePassword = view.findViewById(R.id.btnChangePassword)
+        btnClearSchedule = view.findViewById(R.id.btnClearSchedule)
+
+        btnEditUser.setOnClickListener {
+            Toast.makeText(requireContext(), "Edit User Info clicked", Toast.LENGTH_SHORT).show()
         }
-        view.findViewById<Button>(R.id.btnLogout).setOnClickListener {
-            mainActivity.navigateTo(LoginFragment())
+
+        btnChangePassword.setOnClickListener {
+            Toast.makeText(requireContext(), "Change Password clicked", Toast.LENGTH_SHORT).show()
         }
+
+        btnClearSchedule.setOnClickListener {
+            Toast.makeText(requireContext(), "Schedule cleared", Toast.LENGTH_SHORT).show()
+        }
+        return view
     }
 }

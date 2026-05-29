@@ -19,4 +19,7 @@
     <string name="welcome_to_tempo">Welcome to Tempo!</string>
     <string name="block_title">Block Title</string>
     <string name="save_block">Save Block</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="currently">Currently:</string>
 </resources>

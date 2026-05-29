@@ -11,11 +11,14 @@
         android:id="@+id/bgClouds"
         android:layout_width="533dp"
         android:layout_height="904dp"
+        android:contentDescription="@string/todo1"
+        android:importantForAccessibility="no"
         android:src="@drawable/clouds_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/bgSun"
         android:layout_width="200dp"
@@ -24,15 +27,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tvGreeting"
-        android:layout_width="214dp"
-        android:layout_height="50dp"
+        android:layout_width="182dp"
+        android:layout_height="27dp"
         android:gravity="center"
         android:text="Hello! Sammy"
-        android:textColor="@color/white"
+        android:textColor="@color/gray_text"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,15 +52,15 @@
         android:layout_height="193dp"
         android:gravity="center"
         android:text="Your Schedule for Today is "
-        android:textColor="@color/white"
+        android:textColor="@color/gray_text"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGreeting"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/tvScheduleBooking"
@@ -94,8 +98,8 @@
         android:layout_width="248dp"
         android:layout_height="65dp"
         android:gravity="center"
-        android:text="Currently:"
-        android:textColor="@color/white"
+        android:text="@string/currently"
+        android:textColor="@color/gray_text"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDateTime"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
         android:id="@+id/tvCurrentStudy"
@@ -118,6 +122,6 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDateTime"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.563" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
