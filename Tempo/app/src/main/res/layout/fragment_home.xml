@@ -32,8 +32,8 @@
 
     <TextView
         android:id="@+id/tvGreeting"
-        android:layout_width="182dp"
-        android:layout_height="27dp"
+        android:layout_width="179dp"
+        android:layout_height="38dp"
         android:gravity="center"
         android:text="Hello! Sammy"
         android:textColor="@color/gray_text"
@@ -48,19 +48,19 @@
 
     <TextView
         android:id="@+id/tvScheduleSummary"
-        android:layout_width="286dp"
-        android:layout_height="193dp"
+        android:layout_width="301dp"
+        android:layout_height="195dp"
         android:gravity="center"
-        android:text="Your Schedule for Today is "
+        android:text="Your Schedule for Today is ..."
         android:textColor="@color/gray_text"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGreeting"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvScheduleBooking"
@@ -68,15 +68,15 @@
         android:layout_height="66dp"
         android:gravity="center"
         android:text="Fully Booked"
+        android:textColor="@color/gray_text"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/gray_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGreeting"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.424" />
 
     <TextView
         android:id="@+id/tvDateTime"
@@ -104,10 +104,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDateTime"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.494" />
 
     <TextView
         android:id="@+id/tvCurrentStudy"
@@ -122,6 +122,6 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDateTime"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.867" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
